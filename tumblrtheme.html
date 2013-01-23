@@ -1,0 +1,96 @@
+    <html>
+    <head>
+        <title>{Title}</title>
+        <link rel="shortcut icon" href="{Favicon}">
+        <link rel="alternate" type="application/rss+xml" href="{RSS}">
+        {block:Description}
+            <meta name="description" content="{MetaDescription}" />
+        {/block:Description}
+     
+     
+    <!--
+    Disassemble Theme for Tumblr by Georgia Harris
+    www.smpldesign.co.uk
+    -->
+     
+    <style type="text/css">
+    body {
+    background-color:#000;
+    font-family:Arial;
+    font-size:12px;
+    }
+    a {
+    color:#fff;
+    font-weight:bold;
+    }
+    img {
+    padding: 15px;
+    border: 0px;
+    }
+    #header {
+    position: fixed;
+    z-index: 5000;
+    text-align:left;
+    top: 30px;
+    left:50px;
+    margin: 0px auto;
+    font-family: helvetica;
+    font-weight:800;
+    letter-spacing:1px;
+    font-size: 12px;
+    width: 100%;
+    height: 40px;
+    }
+    #header a {
+    text-decoration:none;
+    padding:0 0 3px 0;
+    border-bottom:1px solid #fff;
+    margin:0 10px 0 0;
+    color:#fff;
+    }
+    #header a:hover {
+    color:#fff;
+    }
+    .caption {
+    margin:auto;
+    width:500px;
+    color:#fff;
+    }
+    td {
+    text-align: center;
+    vertical-align: center;
+    }
+    div.center {
+    margin-top:50px;
+    text-align: center;
+    }
+     
+    </style>
+     
+    <script type="text/javascript" src="http://codysherman.com/tools/infinite-scrolling/code"></script>
+     
+    <body>
+     
+    <div id="header">
+    <a href="/"><b>{Title}</b></a> <span style="margin-right:10px; color:#fff">/</span> <a href="/archive">Archive</a> <a href="{RSS}">Subscribe</a> <a href="/ask">Contact</a> {block:Pages}<a href="{URL}">{Label}</a>{/block:Pages}
+    </div>
+     
+    <div class="center">
+    <div class = "autopagerize_page_element" >
+    {block:Posts}
+     
+    {block:Text}<td><div class="caption" style="border:3px solid #2d2d2d; border-radius:8px">
+    {block:Title}<a href="{Permalink}">{Title}</a>{/block:Title}
+    {Body}</div></td>{/block:Text}
+     
+    {block:Photo}<td>
+    {block:IndexPage}<a href="{Permalink}"><img src="{PhotoURL-500}"  alt="{PhotoAlt}"/></a>{/block:IndexPage}{block:PermalinkPage}{LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}"/>{LinkCloseTag}
+    {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}{/block:PermalinkPage}
+    {/block:Photo}</td>
+    {/block:Posts}
+    </div>
+    </div>
+     
+    </body>
+    </html>
+
